@@ -3,20 +3,15 @@
   <title>Srijan Shashwat's unique blog</title>
 </head>
 <body>
-  <div>
+       <div>
            <h1><a href="/">Srijan's blog</a></h1>
        </div>
-
-       <div>
-           <p>published: 04-12-2020, 18:54</p>
-           <h2><a href="">My first post</a></h2>
-           <p>Python is cool. Django seems cool. Atom text editor is very convenient. Feeling like a coder for the first time.</p>
-         </div>
-
-      <div>
-          <p>published: 04-12-2020, 18:56</p>
-          <h2><a href="">My second post</a></h2>
-          <p>Decided to try out web development backend task for MLSA recruitments. Everyone seems to have fared very well in the competitve coding task, let's see what happens</p>
-        </div>
+       {% for post in posts %}
+          <div>
+              <p>published: {{ post.published_date }}</p>
+              <h2><a href="">{{ post.title }}</a></h2>
+              <p>{{ post.text|linebreaksbr }}</p>
+          </div>
+        {% endfor %}
 </body>
 </html>
